@@ -1,0 +1,27 @@
+class Solution:
+    def reverse(self, x):
+        ans = ''
+        if x > 0:
+            y = str(x)
+            for i in range(len(y)):
+                if i == 0:
+                    pass
+                else:
+                    ans+=(y[-i])
+            ans += y[0]
+        elif x < 0:
+            y = str(x).strip('-')
+            for i in range(len(y)):
+                if i == 0 :
+                    pass
+                else:
+                    ans+=(y[-i])
+            ans += y[0]
+            ans = '-' + ans     
+        
+        else:
+            return x
+        if int(ans) > 2147483648 or int(ans) < -2147483648:
+            return 0
+        else:
+            return int(ans)
