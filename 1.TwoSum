@@ -1,0 +1,9 @@
+class Solution:
+    def twoSum(self, nums, target):
+        tmp = []
+        for num in range(len(nums)):
+            tmp.append(int(target-nums[num]))
+            if tmp[num] in nums and num != nums.index(tmp[num]):
+                return(num,nums.index(tmp[num]))
+
+        
