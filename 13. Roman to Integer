@@ -1,0 +1,45 @@
+class Solution:
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+
+        ans = 0
+        
+        ls = []
+        for i in range(len(s)):
+            ls.append(s[i])
+        ls.append('') 
+    
+        for i in range(len(ls)):
+             
+            if ls[i] == 'I' :
+                if ls[i+1] == 'V' or ls[i+1] == 'X':
+                    ans = ans - 1
+                else:
+                    ans = ans + 1
+            elif ls[i] == 'V':
+                ans = ans + 5
+            elif ls[i] == 'X' :
+                if ls[i+1] == 'L' or ls[i+1] == 'C':
+                    ans = ans - 10
+                else:
+                    ans = ans + 10
+            elif ls[i] == 'L':
+                ans = ans + 50
+            elif ls[i] == 'C':
+                if ls[i+1] == 'D' or ls[i+1] == 'M':
+                    ans = ans - 100
+                else:
+                    ans = ans + 100
+            elif ls[i] == 'D':
+                ans = ans + 500
+            elif ls[i] == 'M':
+                ans = ans + 1000
+            else:
+                pass
+          
+            
+        return ans
+        
