@@ -1,0 +1,25 @@
+class Solution:
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        把LIST合成一個數字字列
+        把數字列轉成數字再加一
+        把數字列轉回串列得一個字元串列
+        把每個字元轉回數字
+        
+        """
+        a = ""
+        for i in range(len(digits)):
+            a += str(digits[i])
+        
+        a = int(a)+1
+        a = str(a)
+        a = list(a)
+        
+        digits = a
+        
+        for i in range(len(digits)):
+            digits[i] = int(digits[i])
+        
+        return digits
