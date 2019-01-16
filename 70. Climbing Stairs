@@ -1,0 +1,43 @@
+class Solution:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        寫一個函示去找"帶入當N1個1和N2個2時候"有幾種排列組合
+        用階層函數去找排列組合的數量再加總起來
+        在主程式裡面再用總數減掉一個2,兩個2...直到沒辦法用2去踩
+        全部加總後再加回都是1的狀態
+        其他再用兩個例外去寫
+        """
+        ans = 0
+        def counts(n1,n2):
+            num = (n1 + n2) 
+            for i in range(1, num):
+                num *= i 
+            for i in range(1, n1):
+                n1 *= i
+            for i in range(1, n2):
+                n2 *= i
+            if n2 == 0:
+                n2 =1
+
+            return num/(n1*n2)
+
+        
+        i = 0
+        amount = n
+        if n > 2:
+            while (amount >= 2):
+                i+=1
+                amount -= 2
+                ans += counts(i,amount)
+            ans +=1
+            
+        elif n == 2:
+            ans = 2
+        else:
+            ans = 1
+        
+        
+        
+        return int(ans)
