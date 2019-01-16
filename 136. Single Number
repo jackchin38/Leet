@@ -1,0 +1,20 @@
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        創新陣列
+        若沒有就加入,有就去除
+        最後把剩下的求出
+    
+        """
+        ls = []
+        
+        for i in nums:
+            if i not in ls:
+                ls.append(i)
+            else:
+                ls.remove(i)
+                
+        return ls.pop()
+            
