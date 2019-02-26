@@ -1,0 +1,13 @@
+class Solution:
+    def numJewelsInStones(self, J: str, S: str) -> int:
+        sum = 0
+        for i in J:
+            sum += S.count(i)
+        return sum
+    
+    """ 
+    這題很簡單的在考一組數字組J在S中有的數量
+    for i in J 這個方式可以把J的每一個字元跑過一遍
+    再用S.count函數來看看單一字元在裡面的量
+    加總後就是答案了
+    """
