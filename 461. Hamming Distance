@@ -1,0 +1,18 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+
+        return bin(x^y).count('1')
+    
+    """
+    這題的問題很特別"number of positions at which the corresponding bits are different"
+    這指的是兩個在BINARY下長得不一樣的數量
+    但是 ^ 運算浮只能用再 int
+    而 bin() 會把INT變成STR
+    因此後面的count要找STR的1不是INT
+    
+    ^ 表的是相異的部分 相同為0 相異為1
+    a = 60            # 60 = 0011 1100 
+    b = 13            # 13 = 0000 1101 
+    c = a ^ b;        # 49 = 0011 0001
+
+    """
