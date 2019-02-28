@@ -1,0 +1,22 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s)%2 != 0: 
+            return False
+        while '()' in s or '[]' in s or '{}' in s:
+            s = s.replace('()','').replace('[]','').replace('{}','')
+        if s != '':
+            return False
+        else:
+            return True
+        
+    """
+    這題用暴力破解比較好理解
+    非2的倍數就可以先排除了一定不對
+    基本上()這個先移光就會剩[]和{}
+    再把[]移光就只剩{}
+    最後再把它移掉如果還有剩那就是錯的
+    不然就是對的
+    而比較值得看的部份是replace的用法
+    STRING裡面沒有remove,只能用s =s.replac('abc','')來消除特定數字
+    這個真的蠻特別的
+    """
