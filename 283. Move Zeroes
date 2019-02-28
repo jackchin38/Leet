@@ -1,0 +1,21 @@
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n = nums.count(0)
+        if nums[-1] != 0 and 0 in nums:
+            for i in range(n+1):
+                nums.remove(0)
+                nums.append(0)
+        elif 0 in nums:
+            for i in range(n):
+                nums.remove(0)
+                nums.append(0)
+        else:
+            pass
+        """
+        這題很簡單 只要確定0數量再做N次把0往後丟得操作就好
+        先判斷裡面有0在判斷尾數非0
+        用把REMOVE把前面的0移掉,在尾巴再補上一個0
+        """
