@@ -1,0 +1,21 @@
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        res = []
+        n = len(nums)
+        nums = set(nums)
+        for i in range(1,n+1):
+            if i not in nums:
+                res.append(i)
+    
+        return res
+    
+    
+    """"
+    這個要用O(N）太麻煩了 偷懶就還是創新的LIST
+    用 not in 來判斷把不再LIST裡面的丟進去
+    關鍵是SET的用法
+    SET是無序的集合,沒有排列順序也沒有重複的問題
+    只記錄有什麼元素
+    因此先把原LIST用SET處理過才能有效率的進行
+    https://blog.csdn.net/business122/article/details/7541486
+    """"
