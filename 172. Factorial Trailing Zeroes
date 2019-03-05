@@ -1,0 +1,11 @@
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        
+        if n == 0: return 0
+        else:
+            return int(n/5 + self.trailingZeroes(n/5))
+        
+        """"
+        簡單來說2*5=10 有2和5各一個才會有一個0
+        因此基本上每5階會有一個0,但這個會重複所以要再重新帶入
+        """"""
